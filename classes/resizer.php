@@ -3,7 +3,7 @@
         protected   $db;
 
         public  function    __construct()   {
-            $this->db   =   new Mysqli('localhost', 'root', '', 'website');
+            $this->db   =   new Mysqli('localhost', 'root', '1234', 'website');
         }
 
 
