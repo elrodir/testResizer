@@ -18,3 +18,18 @@ body    {
 
     margin:   0   auto;
 }
+
+input   {
+
+    padding:    10px;
+
+    background-color:   #fff;
+
+    border:   1px   solid   #ccc;
+
+    margin:   0;
+}
+
+input[type="url"]   {
+
+}
