@@ -13,6 +13,7 @@
 
             $_SESSION['feedback']   =   "Ready! Your    link    :
                 <a  href='$url'>http://resizer/$code</a>";
+
         }   else   {
             $_SESSION['feedback']   =   "Error! Incorrect URL?";
         }
