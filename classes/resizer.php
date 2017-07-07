@@ -34,7 +34,10 @@ class   Shortener   {
 
             $code   =   $this->generateCode($this->db->insert_id);
 
-            $this->db->query("")
+            $this->db->query("UPDATE    links   SET
+              code  = '{$code}'  WHERE url = '{$url}'");
+
+            return   $code;
         }
     }
 }
