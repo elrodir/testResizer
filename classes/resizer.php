@@ -23,19 +23,19 @@
 
 
             $exists    =   $this->db->query("SELECT    code    FROM
-              links   WHERE   url   =   '{$url}'");
+                links   WHERE   url   =   '{$url}'");
 
             if($exists->num_rows)  {
                 return   $exists->fetch_object()->code;
             }    else{
 
             $this->db->query("INSERT    INTO    links(url,  created)
-              VALUES('{$url}', NOW())");
+                VALUES('{$url}', NOW())");
 
             $code   =   $this->generateCode($this->db->insert_id);
 
             $this->db->query("UPDATE    links   SET
-              code  = '{$code}'  WHERE url = '{$url}'");
+                code  = '{$code}'  WHERE url = '{$url}'");
 
             return   $code;
             }
@@ -46,7 +46,7 @@
             $code   =   $this->db->escape_string($code);
 
             $code   =   $this->db->query("SELECT    url   FROM
-              links   WHERE   code   =   '$code'");
+                links   WHERE   code   =   '$code'");
 
             if($code->num_rows)   {
                 return   $code->fetch_object()->url;
