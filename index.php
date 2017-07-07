@@ -40,6 +40,9 @@
 
             <input  type="submit"   value="Resize">
         </form>
+
     </div>
+
 </body>
+
 </html>
