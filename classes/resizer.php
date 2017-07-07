@@ -1,33 +1,33 @@
 <?php
-class   Shortener   {
-    protected   $db;
+    class   Shortener   {
+        protected   $db;
 
-    public  function    __construct()   {
-        $this->db   =   new Mysqli('localhost', 'root', '', 'website');
-    }
-
-
-    public  function generateCode($num)  {
-        return  base_convert($num,  10, 36);
-    }
-
-
-    public  function    makeCode($url)  {
-        $url    =   trim($url);
-
-        if(!filter_var($url,    FILTER_VALIDATE_URL))   {
-            return  '';
+        public  function    __construct()   {
+            $this->db   =   new Mysqli('localhost', 'root', '', 'website');
         }
 
-        $url    =   $this->db->escape_string($url);
+
+        public  function generateCode($num)  {
+            return  base_convert($num,  10, 36);
+        }
 
 
-        $exsists    =   $this->db->query("SELECT    code    FROM
-          links   WHERE   url   =   '{$url}'");
+        public  function    makeCode($url)  {
+            $url    =   trim($url);
 
-        if($exsists->num_rows)  {
-            return   $exsists->fetch_object()->code;
-        }   else{
+            if(!filter_var($url,    FILTER_VALIDATE_URL))   {
+                return  '';
+            }
+
+            $url    =   $this->db->escape_string($url);
+
+
+            $exists    =   $this->db->query("SELECT    code    FROM
+              links   WHERE   url   =   '{$url}'");
+
+            if($exists->num_rows)  {
+                return   $exists->fetch_object()->code;
+            }    else{
 
             $this->db->query("INSERT    INTO    links(url,  created)
               VALUES('{$url}', NOW())");
@@ -38,6 +38,21 @@ class   Shortener   {
               code  = '{$code}'  WHERE url = '{$url}'");
 
             return   $code;
+            }
         }
-    }
-}
+
+        public   function   getUrl($code)   {
+
+            $code   =   $this->db->escape_string($code);
+
+            $code   =   $this->db->query("SELECT    url   FROM
+              links   WHERE   code   =   '$code'");
+
+            if($code->num_rows)   {
+                return   $code->fetch_object()->url;
+            }
+
+                return   '';
+            }
+        }
+?>
