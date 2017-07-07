@@ -12,7 +12,7 @@
         }
 
 
-        public  function    makeCode($url)  {
+        public  function   makeCode($url)  {
             $url    =   trim($url);
 
             if(!filter_var($url,    FILTER_VALIDATE_URL))   {
