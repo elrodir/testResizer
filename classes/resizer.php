@@ -29,7 +29,8 @@ class   Shortener   {
             return   $exists->fetch_object()->code;
         }   else{
 
-            $this->db->query
+            $this->db->query("INSERT    INTO    links(url,  created)
+              VALUES('{$url}', NOW())");
         }
     }
 }
