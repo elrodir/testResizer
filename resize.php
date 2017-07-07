@@ -12,6 +12,10 @@
         if($code    =   $s->makeCode($url))   {
 
             $_SESSION['feedback']   =   "Ready! Your    link    :
-                <a  href='$url'>http://resizer/$code</a";
+                <a  href='$url'>http://resizer/$code</a>";
+        }   else   {
+            $_SESSION['feedback']   =   "Error! Incorrect URL?";
         }
     }
+
+    header('Location:   index.php');
