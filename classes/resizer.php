@@ -1,5 +1,5 @@
 <?php
-    class   Shortener   {
+    class   Resizer   {
         protected   $db;
 
         public  function    __construct()   {

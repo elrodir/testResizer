@@ -5,5 +5,8 @@
     if(isset($_GET['code']))    {
 
         $s   =   new    Resizer();
+
         $code   =   $_GET['code'];
+
+        if($url   =   $s)
     }
