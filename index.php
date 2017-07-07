@@ -19,6 +19,17 @@
 
 <body>
 
+    <div    class="container">
 
+        <h1   classs="title"Url   Shortener</h1>
+
+<?php
+
+    if(isset($_SESSION['feedback']))    {
+
+        echo    "<p>".$_SESSION['feedback']."</p>";
+    }
+?>
+    </div>
 </body>
 </html>
