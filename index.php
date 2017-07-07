@@ -11,7 +11,7 @@
 
     <meta   charset="UTF-8">
 
-    <titel>Url Resizer</titel>
+    <title>Url Resizer</title>
 
     <link   rel   ="stylesheet"   href="css/style.css">
 
