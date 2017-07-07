@@ -3,7 +3,7 @@
     require_once    "classes/resizer.php";
 
 
-    $s    =   Resizer();
+    $s  =   new   Resizer();
 
     if(isset($_POST['url']))    {
 
