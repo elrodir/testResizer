@@ -14,5 +14,22 @@ class   Shortener   {
 
     public  function    makeCode($url)  {
         $url    =   trim($url);
+
+        if(!filter_var($url,    FILTER_VALIDATE_URL))   {
+            return  '';
+        }
+
+        $url    =   $this->db->escape_string($url);
+
+
+        $exsists    =   $this->db->query("SELECT    code    FROM
+          links   WHERE   url   =   '{$url}'");
+
+        if($exsists->num_rows)  {
+            return   $exists->fetch_object()->code;
+        }   else{
+
+            $this->db->query
+        }
     }
 }
