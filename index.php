@@ -21,7 +21,7 @@
 
     <div    class="container">
 
-        <h1   classs="title">Url   Shortener</h1>
+        <h1   classs="title">Url   Resizer</h1>
 
 <?php
 
